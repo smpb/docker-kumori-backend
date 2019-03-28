@@ -75,7 +75,7 @@ local           kumori_influxdb_lib
 
 ### Docker Images
 
-- [Grafana v5.4.3][docker-image-grafana]
+- [Grafana v6.0.2][docker-image-grafana]
 - [InfluxDB 1.7.4][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
