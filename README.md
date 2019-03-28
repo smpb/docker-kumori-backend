@@ -48,9 +48,9 @@ $ ./influxdb/provision.sh
 - other (unchecked)
 
 [InfluxDB]
-- Database: demo
-- User: root
-- Password: 5up3rS3cr3t
+- Database: test
+- User: grafana
+- Password: grafana
 ```
 
 3. Update Settings
