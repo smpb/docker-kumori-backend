@@ -68,9 +68,9 @@ Reference: [FAQ - Grafana Migration][faq-grafana-migration]
 $ docker volume ls
 
 DRIVER          VOLUME NAME
-local           demo_grafana-lib
-local           demo_grafana-log
-local           demo_influxdb-lib
+local           demo_grafana_lib
+local           demo_grafana_log
+local           demo_influxdb_lib
 ```
 
 ### Docker Images
