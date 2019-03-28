@@ -1,4 +1,4 @@
-# Grafana Monitoring System with InfluxDB
+# Kumori Backend: Grafana Monitoring System with InfluxDB
 
 ### Prerequisites
 
@@ -21,17 +21,16 @@
 $ docker exec -it influxdb influx -version
 ```
 
-#### [Grafana] How do I initialized my Grafana with InfluxDB?
-
-1. Login via http://localhost:3000, use the default user/pass: admin/admin
+#### [InfluxDB] How do I initialize my database?
 
 ```bash
-$ docker exec -it influxdb             \
-    influx                             \
-      -username root                   \
-      -password 5up3rS3cr3t            \
-      -execute 'CREATE DATABASE demo;'
+$ ./influxdb/provision.sh
 ```
+
+
+#### [Grafana] How do I initialize my Grafana with InfluxDB?
+
+1. Login via http://localhost:3000, use the default user/pass: admin/admin
 
 2. Configure Data Source
 
@@ -61,9 +60,9 @@ Now, click "Save & Test", and now you should be able to see message prompt: `Dat
 
 #### [Misc] Where can I find my data?
 
-after upgrading to Grafana 5.1+, data store changed, please find your data via `$ docker volume ls`
+After upgrading to Grafana 5.1+, data store changed, please find your data via `$ docker volume ls`
 
-reference: [FAQ - Grafana Migration][faq-grafana-migration]
+Reference: [FAQ - Grafana Migration][faq-grafana-migration]
 
 ```bash
 $ docker volume ls
@@ -76,8 +75,8 @@ local           demo_influxdb-lib
 
 ### Docker Images
 
-- [Grafana v5.3.2][docker-image-grafana]
-- [InfluxDB 1.7.1][docker-image-influxdb]
+- [Grafana v5.4.3][docker-image-grafana]
+- [InfluxDB 1.7.4][docker-image-influxdb]
 
 [docker-image-influxdb]: https://hub.docker.com/_/influxdb/
 [docker-image-grafana]: https://hub.docker.com/r/grafana/grafana/

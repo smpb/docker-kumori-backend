@@ -3,25 +3,24 @@ version: "3"
 services:
     influxdb:
         container_name: influxdb
-        image: influxdb:1.7.1-alpine
+        image: influxdb:1.7.4-alpine
         volumes:
             - ./influxdb/etc:/etc/influxdb
-            - influxdb-lib:/var/lib/influxdb
+            - influxdb_lib:/var/lib/influxdb
         environment:
-            - INFLUXDB_ADMIN_USER=root
-            - INFLUXDB_ADMIN_PASSWORD=5up3rS3cr3t
+            - INFLUXDB_ADMIN_USER=admin
+            - INFLUXDB_ADMIN_PASSWORD=admin
         ports:
             - 8083:8083
             - 8086:8086
-        privileged: true
 
     grafana:
         container_name: grafana
-        image: grafana/grafana:5.3.2
+        image: grafana/grafana:5.4.3
         volumes:
             - ./grafana/etc:/etc/grafana:ro
-            - grafana-lib:/var/lib/grafana
-            - grafana-log:/var/log/grafana
+            - grafana_lib:/var/lib/grafana
+            - grafana_log:/var/log/grafana
         links:
             - influxdb:influxdb
         environment:
@@ -30,14 +29,13 @@ services:
             - 3000:3000
         depends_on:
             - influxdb
-        privileged: true
 
 volumes:
-  influxdb-lib:
+  influxdb_lib:
     external: false
 
-  grafana-lib:
+  grafana_lib:
     external: false
 
-  grafana-log:
+  grafana_log:
     external: false
